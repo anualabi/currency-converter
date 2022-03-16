@@ -1,7 +1,16 @@
-import React from 'react';
+import { ThemeProvider } from '@mui/material';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { theme } from './theme';
+import NavBar from '../Project/NavBar';
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Router>
+        <NavBar />
+      </Router>
+    </ThemeProvider>
+  );
 };
 
 export default App;
