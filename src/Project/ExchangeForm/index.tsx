@@ -1,9 +1,12 @@
 import { FC } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { TextField, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
+import { v4 as uuidv4 } from 'uuid';
 import { CurrencyCode } from '../../shared/constants/currencyCode';
 import { SvgCompareArrow } from '../../shared/components';
-import { formatTodayDate } from '../../shared/utils/date';
+import { formatTodayDate, formatTimeNow } from '../../shared/utils/date';
+import { useLocalStorage } from '../../shared/hooks';
 import { FormData, CurrencyCodeType } from '../../shared/types';
 import { StyledExchangeForm, StyledBox } from './styles';
 
@@ -19,10 +22,15 @@ export const initialFormValues: FormData = {
 };
 
 const ExchangeForm: FC<Props> = ({ handleSubmit }) => {
+  const location = useLocation();
+  const state = location.state as FormData;
+  const [submittedData, setSubmittedData] = useLocalStorage('conversion-history');
+
   const formik = useFormik({
-    initialValues: initialFormValues,
+    initialValues: state || initialFormValues,
     onSubmit: (values: FormData) => {
       handleSubmit(values);
+      setSubmittedData([...submittedData, { ...values, id: uuidv4(), time: formatTimeNow }]);
     }
   });
 

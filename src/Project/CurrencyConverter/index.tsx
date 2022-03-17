@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Container, Box, CircularProgress, Typography, Divider } from '@mui/material';
 import { useCurrencyConversion, useTimeSeries } from '../../shared/hooks';
 import ExchangeForm, { initialFormValues } from '../ExchangeForm';
@@ -8,7 +9,9 @@ import { formatSevenDaysAgo } from '../../shared/utils/date';
 import { FormData } from '../../shared/types';
 
 const CurrencyConverter = () => {
-  const [formData, setFormData] = useState<FormData>(initialFormValues);
+  const location = useLocation();
+  const state = location.state as FormData;
+  const [formData, setFormData] = useState<FormData>(state || initialFormValues);
   const [startDate, setStartDate] = useState<string>(formatSevenDaysAgo);
   const { baseCurrency, targetCurrency, amount, date } = formData;
   const { status: conversionStatus, data: conversionData } = useCurrencyConversion({

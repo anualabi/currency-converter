@@ -1,6 +1,3 @@
-export interface FormData {
-  amount: string;
-  baseCurrency: string;
-  targetCurrency: string;
-  date: string;
-}
+import { LocalStorageData } from "./localstorage";
+
+export type FormData = Omit<LocalStorageData, 'id' | 'time'>
