@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+<h1 align="center">Currency Converter</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Overview](#overview)
+  - [Built With](#built-with)
+- [Features](#features)
+- [How to use](#how-to-use)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+![Currency Converter Screenshot ](https://user-images.githubusercontent.com/33486765/158717880-fab6c642-08ba-407b-aabf-b5446e8e3192.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Built With
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Material-UI](https://mui.com/)
+- [React Router](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)
+- [Formik](https://formik.org/)
+- [React Query](https://react-query.tanstack.com/)
+- [Date-fns](https://date-fns.org/)
+- [uuid](https://github.com/uuidjs/uuid#readme)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The features implemented are as follows:
 
-### `npm run build`
+- A user can select a base currency and target currency.
+- A user can click on the switch button to switch the base and target the currencies.
+- A user can click on the convert button and see the conversion result and exchange history.
+- A user can see the exchange history for the last 7, 14 and 30 days as well as the statistics.
+- A user can see the conversion history table which is saved to localstorage.
+- A user can mouse over each conversion history and see the eye and delete button.
+- A user can click on the eye button to go to the currency converter page to perform the conversion again.
+- A user can click on the delete button to delete each conversion history from the history.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How To Use
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Clone this repository
+$ git clone https://github.com/anualabi/currency-converter.git
 
-### `npm run eject`
+# Install dependencies
+$ npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Run the app
+$ npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [Material Design Icons](https://material.io/tools/icons)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contact
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- GitHub [@anualabi](https://{github.com/anualabi})
+- LinkedIn [@anualabi](https://www.linkedin.com/in/anualabi/)
