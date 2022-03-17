@@ -1,4 +1,4 @@
-import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Container,
   Typography,
@@ -16,7 +16,7 @@ import { LocalStorageData } from '../../shared/types';
 import { StyledTableRow, StyledActions, StyledActionBox, StyledTypography } from './styles';
 
 const ConversionHistory = () => {
-  const navigate: NavigateFunction = useNavigate();
+  const navigate = useNavigate();
   const [conversionHistory, setConversionHistory] = useLocalStorage('conversion-history');
 
   if (conversionHistory.length === 0) {
