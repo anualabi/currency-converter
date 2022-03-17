@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Container, Box, CircularProgress, Typography, Divider } from '@mui/material';
-import { useCurrencyConversion } from '../../shared/hooks';
+import { useCurrencyConversion, useTimeSeries } from '../../shared/hooks';
 import ExchangeForm, { initialFormValues } from '../ExchangeForm';
 import ExchangeHistoryFilter from '../ExchangeHistoryFilter';
+import ExchangeHistoryTable from '../ExchangeHistoryTable';
 import { formatSevenDaysAgo } from '../../shared/utils/date';
 import { FormData } from '../../shared/types';
 
@@ -17,6 +18,13 @@ const CurrencyConverter = () => {
     date,
     amount
   });
+  const { status: timeSeriesStatus, data: timeSeriesData } = useTimeSeries(
+    startDate,
+    formData,
+    baseCurrency,
+    startDate,
+    date
+  );
 
   const onHandleSubmit = (values: FormData) => setFormData(values);
   const onHandleSelect = (duration: string) => setStartDate(duration);
@@ -57,7 +65,16 @@ const CurrencyConverter = () => {
         <Typography variant="h5" sx={{ mb: 1 }}>
           Exchange History
         </Typography>
-        <ExchangeHistoryFilter handleSelect={onHandleSelect} />{' '}
+        <ExchangeHistoryFilter handleSelect={onHandleSelect} />
+        {timeSeriesStatus === 'loading' ? (
+          <CircularProgress color="inherit" />
+        ) : timeSeriesStatus === 'error' ? (
+          <Typography variant="body1" color="red">
+            Unable to get exchange history.
+          </Typography>
+        ) : (
+          <ExchangeHistoryTable history={timeSeriesData.rates} targetCurrency={targetCurrency} />
+        )}
       </Box>
     </Container>
   );
