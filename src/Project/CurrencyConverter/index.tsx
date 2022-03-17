@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Container, Box, CircularProgress, Typography, Divider } from '@mui/material';
 import { useCurrencyConversion } from '../../shared/hooks';
 import ExchangeForm, { initialFormValues } from '../ExchangeForm';
+import ExchangeHistoryFilter from '../ExchangeHistoryFilter';
+import { formatSevenDaysAgo } from '../../shared/utils/date';
 import { FormData } from '../../shared/types';
 
 const CurrencyConverter = () => {
   const [formData, setFormData] = useState<FormData>(initialFormValues);
+  const [startDate, setStartDate] = useState<string>(formatSevenDaysAgo);
   const { baseCurrency, targetCurrency, amount, date } = formData;
   const { status: conversionStatus, data: conversionData } = useCurrencyConversion({
     formData,
@@ -16,6 +19,7 @@ const CurrencyConverter = () => {
   });
 
   const onHandleSubmit = (values: FormData) => setFormData(values);
+  const onHandleSelect = (duration: string) => setStartDate(duration);
 
   return (
     <Container maxWidth="lg">
@@ -47,6 +51,13 @@ const CurrencyConverter = () => {
             </Typography>
           </Box>
         )}
+      </Box>
+      <Divider />
+      <Box sx={{ my: 5 }}>
+        <Typography variant="h5" sx={{ mb: 1 }}>
+          Exchange History
+        </Typography>
+        <ExchangeHistoryFilter handleSelect={onHandleSelect} />{' '}
       </Box>
     </Container>
   );
