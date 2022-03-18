@@ -7,6 +7,7 @@ import ExchangeHistoryFilter from '../ExchangeHistoryFilter';
 import ExchangeHistoryTable from '../ExchangeHistoryTable';
 import { formatSevenDaysAgo } from '../../shared/utils/date';
 import { FormData } from '../../shared/types';
+import { StyledConversion } from './styles';
 
 const CurrencyConverter = () => {
   const location = useLocation();
@@ -49,14 +50,15 @@ const CurrencyConverter = () => {
           </Typography>
         ) : (
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Box sx={{ display: 'flex' }}>
+            <StyledConversion>
               <Typography variant="h1">
-                {conversionData.query.amount} {conversionData.query.from}&nbsp;=
+                {conversionData.query.amount} {conversionData.query.from}
               </Typography>
+              <Typography variant="h1">&nbsp;=&nbsp;</Typography>
               <Typography variant="h1" sx={{ color: 'secondary.main' }}>
-                &nbsp;{conversionData.result || 0} {conversionData.query.to}
+                {conversionData.result || 0} {conversionData.query.to}
               </Typography>
-            </Box>
+            </StyledConversion>
             <Typography variant="body1" sx={{ my: 1 }}>
               1 {conversionData.query.from} = {conversionData.info.rate} {conversionData.query.to}
             </Typography>
