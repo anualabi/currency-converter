@@ -43,7 +43,7 @@ const ExchangeHistoryTable: FC<Props> = ({ history, targetCurrency }) => {
 
   return (
     <Grid container spacing={2}>
-      <Grid item md={6}>
+      <Grid item md={6} xs={12}>
         <Card>
           <TableContainer>
             <Table>
@@ -58,7 +58,7 @@ const ExchangeHistoryTable: FC<Props> = ({ history, targetCurrency }) => {
           </TableContainer>
         </Card>
       </Grid>
-      <Grid item md={6}>
+      <Grid item md={6} xs={12}>
         <Card>
           <TableContainer>
             <Table>
