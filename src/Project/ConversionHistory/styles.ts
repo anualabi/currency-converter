@@ -21,8 +21,21 @@ export const StyledActions = styled(Box, {})`
 export const StyledActionBox = styled(Box, {})`
   display: flex;
   align-items: center;
+  padding: 8px;
 `;
 
-export const StyledTypography = styled(Typography, {})`
-  margin: 8px;
+export const StyledActionText = styled(Typography, {})`
+  margin: 4px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  .delete-text {
+    @media (min-width: 998px) {
+      &::after {
+        content: ' from history';
+      }
+    }
+  }
 `;

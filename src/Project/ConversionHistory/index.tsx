@@ -13,7 +13,7 @@ import {
 import { SvgEyeIcon, SvgDeleteIcon } from '../../shared/components';
 import { useLocalStorage } from '../../shared/hooks';
 import { LocalStorageData } from '../../shared/types';
-import { StyledTableRow, StyledActions, StyledActionBox, StyledTypography } from './styles';
+import { StyledTableRow, StyledActions, StyledActionBox, StyledActionText } from './styles';
 
 const ConversionHistory = () => {
   const navigate = useNavigate();
@@ -55,11 +55,13 @@ const ConversionHistory = () => {
               }
             >
               <SvgEyeIcon fill="currentColor" />
-              <StyledTypography>View</StyledTypography>
+              <StyledActionText>View</StyledActionText>
             </StyledActionBox>
             <StyledActionBox sx={{ color: 'warning.main' }} onClick={() => handleDelete(id)}>
               <SvgDeleteIcon fill="currentColor" />
-              <StyledTypography>Delete from history</StyledTypography>
+              <StyledActionText>
+                <span className="delete-text">Delete</span>
+              </StyledActionText>
             </StyledActionBox>
           </StyledActions>
         </TableCell>
