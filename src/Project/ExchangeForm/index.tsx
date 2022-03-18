@@ -8,7 +8,7 @@ import { SvgCompareArrow } from '../../shared/components';
 import { formatTodayDate, formatTimeNow } from '../../shared/utils/date';
 import { useLocalStorage } from '../../shared/hooks';
 import { FormData, CurrencyCodeType } from '../../shared/types';
-import { StyledExchangeForm, StyledBox } from './styles';
+import { StyledExchangeForm, StyledBox, StyledTextField, StyledFormControl } from './styles';
 
 interface Props {
   handleSubmit: (values: FormData) => void;
@@ -50,18 +50,18 @@ const ExchangeForm: FC<Props> = ({ handleSubmit }) => {
     <StyledExchangeForm>
       <form onSubmit={formik.handleSubmit}>
         <StyledBox>
-          <TextField
+          <StyledTextField
             id="amount"
             name="amount"
             label="Amount"
             variant="standard"
             value={formik.values.amount}
             onChange={formik.handleChange}
-            sx={{ mx: 1, my: 2, minWidth: 120 }}
+            // sx={{ mx: 1, my: 2, minWidth: 120 }}
             required
             type="number"
           />
-          <FormControl variant="standard" sx={{ mx: 1, my: 2, minWidth: 290 }}>
+          <StyledFormControl variant="standard">
             <InputLabel id="base-currency-label">From</InputLabel>
             <Select
               labelId="base-currency-label"
@@ -74,11 +74,11 @@ const ExchangeForm: FC<Props> = ({ handleSubmit }) => {
             >
               {currencyCodeSelect}
             </Select>
-          </FormControl>
+          </StyledFormControl>
           <Button variant="contained" onClick={handleSwitchCurrency}>
             <SvgCompareArrow />
           </Button>
-          <FormControl variant="standard" sx={{ mx: 1, my: 2, minWidth: 290 }}>
+          <StyledFormControl variant="standard">
             <InputLabel id="target-currency-label">To</InputLabel>
             <Select
               labelId="target-currency-label"
@@ -91,7 +91,7 @@ const ExchangeForm: FC<Props> = ({ handleSubmit }) => {
             >
               {currencyCodeSelect}
             </Select>
-          </FormControl>
+          </StyledFormControl>
           <Button
             variant="contained"
             type="submit"
