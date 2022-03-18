@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { TextField, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
+import { InputLabel, Select, MenuItem, Button } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 import { CurrencyCode } from '../../shared/constants/currencyCode';
 import { SvgCompareArrow } from '../../shared/components';
@@ -57,7 +57,6 @@ const ExchangeForm: FC<Props> = ({ handleSubmit }) => {
             variant="standard"
             value={formik.values.amount}
             onChange={formik.handleChange}
-            // sx={{ mx: 1, my: 2, minWidth: 120 }}
             required
             type="number"
           />
