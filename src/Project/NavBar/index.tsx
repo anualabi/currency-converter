@@ -7,17 +7,17 @@ const NavBar = () => {
     <Box sx={{ flexGrow: 1, mb: 12 }}>
       <StyledNavBar>
         <Toolbar>
-          <StyledTypography variant="h6" sx={{ flexGrow: 1 }}>
+          <StyledTypography variant="h6">
             <Link to="/">CurrencyExchange</Link>
           </StyledTypography>
           <StyledTypography variant="subtitle2">
             <NavLink to="/currency-converter">
-              <Box>Currency Converter</Box>
+              <span className="converter">Converter</span>
             </NavLink>
           </StyledTypography>
           <StyledTypography variant="subtitle2">
             <NavLink to="/conversion-history">
-              <Box>View Conversion History</Box>
+              <span className="history">History</span>
             </NavLink>
           </StyledTypography>
         </Toolbar>
