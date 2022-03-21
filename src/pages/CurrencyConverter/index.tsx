@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Box, CircularProgress, Typography, Divider } from '@mui/material';
-import { useCurrencyConversion, useTimeSeries } from '../../shared/hooks';
-import ExchangeForm, { initialFormValues } from '../ExchangeForm';
-import ExchangeHistoryFilter from '../ExchangeHistoryFilter';
-import ExchangeHistoryTable from '../ExchangeHistoryTable';
+import { useCurrencyConversion } from '../../shared/hooks/currencyConversion';
+import { useTimeSeries } from '../../shared/hooks/timeSeries';
+import ExchangeForm, { initialFormValues } from '../../components/ExchangeForm';
+import ExchangeHistoryFilter from '../../components/ExchangeHistoryFilter';
+import ExchangeHistoryTable from '../../components/ExchangeHistoryTable';
 import { formatSevenDaysAgo } from '../../shared/utils/date';
-import { FormData } from '../../shared/types';
+import { FormData } from '../../shared/models/form';
 import { StyledConversion } from './styles';
 
 const CurrencyConverter = () => {

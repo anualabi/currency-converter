@@ -1,4 +1,4 @@
-import { CurrencyCodeType } from '../types';
+import { CurrencyCodeType } from '../models/currencycode';
 
 export const CurrencyCode: CurrencyCodeType[] = [
   { key: 'usd', value: 'USD', name: 'United States Dollar' },

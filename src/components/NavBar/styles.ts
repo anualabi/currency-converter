@@ -38,7 +38,7 @@ export const StyledTypography = styled(Typography, {})`
     .converter {
       @media (min-width: 700px) {
         &::before {
-          content: 'View Conversion ';
+          content: 'Currency ';
         }
       }
     }
@@ -46,7 +46,7 @@ export const StyledTypography = styled(Typography, {})`
     .history {
       @media (min-width: 700px) {
         &::before {
-          content: 'Currency ';
+          content: 'View Conversion ';
         }
       }
     }

@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import axios from 'axios';
-import { FormData } from '../types';
+import { FormData } from '../models/form';
 
 interface Props {
   formData: FormData;

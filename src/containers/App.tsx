@@ -1,8 +1,8 @@
 import { ThemeProvider } from '@mui/material';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { theme } from './theme';
-import NavBar from '../Project/NavBar';
-import Routes from './Routes';
+import { theme } from '../shared/utils/theme';
+import NavBar from '../components/NavBar';
+import Routes from './AppRoutes';
 
 const App = () => {
   return (

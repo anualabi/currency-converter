@@ -4,10 +4,11 @@ import { useFormik } from 'formik';
 import { InputLabel, Select, MenuItem, Button } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 import { CurrencyCode } from '../../shared/constants/currencyCode';
-import { SvgCompareArrow } from '../../shared/components';
+import SvgCompareArrow from '../../shared/svgs/SvgCompareArrow';
 import { formatTodayDate, formatTimeNow } from '../../shared/utils/date';
-import { useLocalStorage } from '../../shared/hooks';
-import { FormData, CurrencyCodeType } from '../../shared/types';
+import { useLocalStorage } from '../../shared/hooks/localStorage';
+import { FormData } from '../../shared/models/form';
+import { CurrencyCodeType } from '../../shared/models/currencycode';
 import { StyledExchangeForm, StyledBox, StyledTextField, StyledFormControl } from './styles';
 
 interface Props {

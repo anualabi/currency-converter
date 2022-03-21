@@ -10,9 +10,10 @@ import {
   TableRow,
   TableCell
 } from '@mui/material';
-import { SvgEyeIcon, SvgDeleteIcon } from '../../shared/components';
-import { useLocalStorage } from '../../shared/hooks';
-import { LocalStorageData } from '../../shared/types';
+import SvgEyeIcon from '../../shared/svgs/SvgEyeIcon';
+import SvgDeleteIcon from '../../shared/svgs/SvgDeleteIcon';
+import { useLocalStorage } from '../../shared/hooks/localStorage';
+import { LocalStorageData } from '../../shared/models/localstorage';
 import { StyledTableRow, StyledActions, StyledActionBox, StyledActionText } from './styles';
 
 const ConversionHistory = () => {
