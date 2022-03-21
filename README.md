@@ -17,8 +17,6 @@
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
 - [Material-UI](https://mui.com/)
 - [React Router](https://reactrouter.com/)
 - [Axios](https://axios-http.com/)
